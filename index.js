@@ -1,13 +1,19 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(cors());
 app.use(express.json());
+
+app.use(cors({
+	origin: 'https://incorporation-test.vercel.app',
+}));
 
 const transporter = nodemailer.createTransport({
 	service: 'gmail',
