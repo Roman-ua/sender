@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use(cors({
-	origin: 'https://incorporation-test.vercel.app',
+	origin: 'https://dmca-ui.vercel.app',
 }));
 
 const transporter = nodemailer.createTransport({
